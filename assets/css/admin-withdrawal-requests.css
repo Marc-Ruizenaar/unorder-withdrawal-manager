@@ -1,0 +1,142 @@
+#un-order-reject-dialog {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+#un-order-reject-dialog[hidden] {
+	display: none !important;
+}
+
+.un-order-reject-dialog__panel {
+	background: #fff;
+	max-width: 32rem;
+	width: 100%;
+	padding: 1.5rem;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid #c3c4c7;
+}
+
+.un-order-reject-dialog__panel h2 {
+	margin-top: 0;
+}
+
+/* Withdrawal reason (long text) — read-only */
+.un-order-reason-dialog {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.un-order-reason-dialog[hidden] {
+	display: none !important;
+}
+
+.un-order-reason-dialog__panel {
+	background: #fff;
+	max-width: 40rem;
+	width: 100%;
+	max-height: min(80vh, 32rem);
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid #c3c4c7;
+}
+
+.un-order-reason-dialog__panel h2 {
+	margin-top: 0;
+	flex-shrink: 0;
+}
+
+.un-order-reason-dialog__body {
+	overflow: auto;
+	flex: 1 1 auto;
+	margin: 0 0 1rem;
+	min-height: 0;
+}
+
+.un-order-reason-dialog__pre {
+	margin: 0;
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.un-order-withdrawal-actions-hint .description {
+	margin: 0 0 12px;
+}
+
+/* Customer withdrawal reason (optional free text) */
+.column-reason {
+	max-width: 280px;
+	word-wrap: break-word;
+	vertical-align: top;
+}
+
+.column-reason .un-order-reason-open {
+	display: inline-block;
+	max-width: 100%;
+	text-align: left;
+	height: auto;
+	white-space: normal;
+	font-weight: normal;
+	line-height: 1.5;
+	color: #2271b1;
+	text-decoration: underline;
+	padding: 0;
+	cursor: pointer;
+}
+
+.column-reason .un-order-reason-open:hover,
+.column-reason .un-order-reason-open:focus {
+	color: #135e96;
+}
+
+/* Actions column */
+.column-row_actions {
+	width: 160px;
+	white-space: nowrap;
+}
+
+.un-order-row-actions {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.un-order-btn-approve {
+	color: #fff !important;
+	background: #00a32a !important;
+	border-color: #00a32a !important;
+}
+
+.un-order-btn-approve:hover,
+.un-order-btn-approve:focus {
+	background: #007a1f !important;
+	border-color: #007a1f !important;
+}
+
+.un-order-btn-reject {
+	color: #d63638 !important;
+	border-color: #d63638 !important;
+	background: #fff !important;
+}
+
+.un-order-btn-reject:hover,
+.un-order-btn-reject:focus {
+	color: #fff !important;
+	background: #d63638 !important;
+}

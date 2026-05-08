@@ -1,0 +1,414 @@
+# Copyright (C) 2026 Un Order
+# This file is distributed under the GPL-2.0-or-later.
+#
+# Regenerate with WP-CLI from the plugin root:
+#   wp i18n make-pot . languages/un-order.pot \
+#     --domain=un-order \
+#     --exclude=vendor,node_modules
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Un Order 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-24T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Manual scaffold. Regenerate with: wp i18n make-pot . languages/un-order.pot --domain=un-order --exclude=vendor\n"
+"X-Domain: un-order\n"
+
+# -----------------------------------------------------------------------
+# Plugin bootstrap / notices
+# -----------------------------------------------------------------------
+
+#: includes/Plugin.php
+msgid "Un Order requires WooCommerce to be installed and active."
+msgstr ""
+
+# -----------------------------------------------------------------------
+# WooCommerce > Settings > Un Order (EuWithdrawalSettingsPage.php)
+# -----------------------------------------------------------------------
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Un Order"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Un Order settings"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Configure the right-of-withdrawal flow (Dutch Civil Code Art. 230oa / EU Directive)."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Withdrawal period (days)"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Days after purchase during which the customer may exercise the right of withdrawal. Statutory minimum is 14 days."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Disable withdrawal for categories"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Orders whose items all belong to the selected categories will not show the withdrawal button. Leave empty to allow withdrawal for all categories."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Quantity selection title"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Heading shown inside the withdrawal form above the product list (the fieldset legend)."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Select quantities to withdraw"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Withdrawal form help text"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Explanatory paragraph shown below the quantity selection title. Basic HTML is allowed. Leave blank to hide."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Admin notification email"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Override the recipient for withdrawal admin notifications. Leave blank to use the WooCommerce store email."
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+#. translators: %s: current admin email address
+msgid "Defaults to %s"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Allow guest withdrawals"
+msgstr ""
+
+#: includes/Admin/EuWithdrawalSettingsPage.php
+msgid "Allow customers without an account to use the <code>[eu_withdrawal_button]</code> shortcode to look up their order by number and email."
+msgstr ""
+
+# -----------------------------------------------------------------------
+# My Account > Orders action (AccountOrdersWithdrawal.php)
+# -----------------------------------------------------------------------
+
+#: includes/Frontend/AccountOrdersWithdrawal.php
+msgid "Withdraw order"
+msgstr ""
+
+#: includes/Frontend/AccountOrdersWithdrawal.php
+#. translators: %s: order number
+msgid "Withdraw order %s"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# My Account > Withdrawal endpoint (AccountWithdrawalEndpoint.php)
+# -----------------------------------------------------------------------
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "Withdrawal request received"
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "Withdraw order"
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "No order was specified. Please return to your orders list and try again."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "The order you selected could not be found."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "You must be signed in to continue."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "Your session has expired or the link is invalid. Please start the withdrawal process again."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "You are not allowed to view this order."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "There is nothing left to withdraw for this order. You may have already used your withdrawal right for the full order lines, or only rejected requests are left available again."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "No order was specified."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "No withdrawal was found for this order. If you have just submitted a request, please check your order notes."
+msgstr ""
+
+# -----------------------------------------------------------------------
+# AJAX submit handler (Ajax/WithdrawalSubmit.php)
+# -----------------------------------------------------------------------
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "Your session has expired. Please refresh the page and try again."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "Invalid order."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "You are not allowed to modify this order."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "You must be signed in to submit a withdrawal."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "Your session has expired or the link is invalid. Please start the withdrawal process again."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "The order could not be found."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "There is nothing left to withdraw for this order. Quantities you already asked to withdraw in a pending or approved request are not available again. If a request was rejected, you can add those products again here."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "One of the selected products is not part of this order."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "Select at least one product quantity to withdraw."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "We could not save your request. Please try again or contact the store."
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "Withdrawal request submitted by customer"
+msgstr ""
+
+#: includes/Ajax/WithdrawalSubmit.php
+msgid "You cannot withdraw more than the remaining quantity for each line (your order line minus quantities already in a pending or approved withdrawal)."
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Shortcode lookup (Frontend/WithdrawalShortcode.php)
+# -----------------------------------------------------------------------
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Please enter your order number and billing email address."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "No order was found matching that order number and email address. Please check the details and try again."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Guest withdrawals are not currently enabled. Please sign in to your account to continue."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "There is nothing left to withdraw for this order. All quantities have already been requested or approved."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Please enter your order number and email address."
+msgstr ""
+
+#: includes/Frontend/WithdrawalShortcode.php
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Withdrawal form template (templates/myaccount/form-withdrawal.php)
+# -----------------------------------------------------------------------
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Order summary"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Product"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Quantity"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Total"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+#. translators: 1: order number 2: order date (formatted)
+msgid "Order %1$s — %2$s"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "This order has no products available to withdraw. Please contact the store if you need help."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "For each product, choose how many units to withdraw. The maximum is what you still have available after any earlier pending or approved withdrawal for this order. A rejected request does not use up your available quantity. Use 0 if you are not withdrawing a line in this request."
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+#. translators: %s: quantity ordered on the order line
+msgid "Ordered: %s"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+#. translators: 1: quantity already in another withdrawal, 2: max you can enter on this form
+msgid "(%1$s of these are already in a pending or approved withdrawal. You can request up to %2$s this time.)"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Quantity to withdraw"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Reason (optional)"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Continue to confirm"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Review and confirm withdrawal"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "This is the final step of your right of withdrawal. When you confirm, we will register your request and you will be taken to a confirmation page."
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "What you are withdrawing"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Go back to edit the selection"
+msgstr ""
+
+#: templates/myaccount/form-withdrawal.php
+msgid "Confirm withdrawal"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Withdrawal success template (templates/myaccount/withdrawal-success.php)
+# -----------------------------------------------------------------------
+
+#: templates/myaccount/withdrawal-success.php
+#. translators: %s: order number (may include #)
+msgid "Your withdrawal request for order %s has been received. We will process it as soon as possible."
+msgstr ""
+
+#: templates/myaccount/withdrawal-success.php
+msgid "Back to orders"
+msgstr ""
+
+#: templates/myaccount/withdrawal-success.php
+msgid "View this order"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Withdrawal error template (templates/myaccount/withdrawal-error.php)
+# -----------------------------------------------------------------------
+
+#: templates/myaccount/withdrawal-error.php
+msgid "View orders"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Shortcode lookup template (templates/shortcode/withdrawal-lookup.php)
+# -----------------------------------------------------------------------
+
+#: templates/shortcode/withdrawal-lookup.php
+msgid "To exercise your right of withdrawal, please enter the order number from your confirmation email and the email address you used when placing the order."
+msgstr ""
+
+#: templates/shortcode/withdrawal-lookup.php
+msgid "Order number"
+msgstr ""
+
+#: templates/shortcode/withdrawal-lookup.php
+msgid "required"
+msgstr ""
+
+#: templates/shortcode/withdrawal-lookup.php
+msgid "Billing email address"
+msgstr ""
+
+#: templates/shortcode/withdrawal-lookup.php
+msgid "Find my order"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# JS (wp_localize_script) — included here for reference; extracted by
+# wp i18n make-pot automatically via wp_localize_script calls.
+# -----------------------------------------------------------------------
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "Set a quantity to withdraw for at least one product."
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+#. x-context: multiplication sign between product name and quantity (confirm step)
+msgid "×"
+msgstr ""
+
+#: includes/Frontend/AccountWithdrawalEndpoint.php
+msgid "No reason given"
+msgstr ""
+
+# -----------------------------------------------------------------------
+# Transactional emails
+# -----------------------------------------------------------------------
+
+#: includes/Email/WithdrawalAdminEmail.php
+msgid "Withdrawal request (admin)"
+msgstr ""
+
+#: includes/Email/WithdrawalAdminEmail.php
+msgid "Receive a plain-text notification when a customer submits a withdrawal request."
+msgstr ""
+
+#: includes/Email/WithdrawalAdminEmail.php
+msgid "[{site_title}] Withdrawal request for order #{order_id}"
+msgstr ""
+
+#: includes/Email/WithdrawalAdminEmail.php
+msgid "New withdrawal request"
+msgstr ""
+
+#: includes/Email/WithdrawalAdminEmail.php
+#. translators: %s: WooCommerce store admin email
+msgid "Enter recipient(s) (comma separated). Defaults to the address set under WooCommerce > Settings > Un Order, or %s if not set."
+msgstr ""

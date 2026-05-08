@@ -1,0 +1,9 @@
+/**
+ * My Account > Orders: withdrawal action link matches other row actions.
+ *
+ * @package UnOrder
+ */
+.woocommerce-orders-table__cell-order-actions a.woocommerce-button.un_order_withdraw {
+	display: inline-block;
+	margin: 0.25em 0.25em 0 0;
+}

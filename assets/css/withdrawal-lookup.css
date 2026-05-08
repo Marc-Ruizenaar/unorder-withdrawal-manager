@@ -1,0 +1,125 @@
+/* [eu_withdrawal_button] shortcode: order lookup form */
+
+.un-order-lookup {
+    max-width: 480px;
+}
+
+.un-order-lookup__intro {
+    margin-bottom: 1.25em;
+    color: inherit;
+}
+
+.un-order-lookup__form .un-order-lookup__field {
+    margin-bottom: 1em;
+}
+
+.un-order-lookup__form label {
+    display: block;
+    margin-bottom: .3em;
+    font-weight: 600;
+}
+
+.un-order-lookup__input {
+    width: 100%;
+}
+
+.un-order-lookup__error {
+    margin: .75em 0;
+    padding: .75em 1em;
+}
+
+.un-order-lookup__error[hidden] {
+    display: none;
+}
+
+.un-order-lookup__actions {
+    margin-top: 1.25em;
+}
+
+.un-order-lookup__btn[aria-busy="true"] {
+    opacity: .7;
+    cursor: wait;
+}
+
+.un-order-lookup__results[hidden] {
+    display: none;
+}
+
+.un-order-lookup__results-inner {
+    margin-top: 1.5em;
+    padding: 1em 1.25em;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    background: #fafafa;
+}
+
+.un-order-lookup__results-title {
+    margin: 0 0 1em;
+    font-size: 1.15em;
+}
+
+.un-order-lookup__meta {
+    margin: 0 0 1.25em;
+}
+
+.un-order-lookup__meta > div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: .25rem 1rem;
+    margin-bottom: .5em;
+}
+
+.un-order-lookup__meta dt {
+    margin: 0;
+    font-weight: 600;
+}
+
+.un-order-lookup__meta dd {
+    margin: 0;
+}
+
+.un-order-lookup__items-heading {
+    margin: 0 0 .5em;
+    font-size: 1em;
+}
+
+.un-order-lookup__items {
+    width: 100%;
+    margin-bottom: 1.25em;
+    border-collapse: collapse;
+}
+
+.un-order-lookup__items th,
+.un-order-lookup__items td {
+    padding: .5em .6em;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.un-order-lookup__qty,
+.un-order-lookup__qty-head {
+    width: 4rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.un-order-lookup__results-actions {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75em;
+    align-items: center;
+}
+
+.un-order-lookup__btn-secondary {
+    background: transparent;
+}
+
+/* Intro text inside the withdrawal form */
+.un-order-withdrawal__intro {
+    margin-bottom: 1.5em;
+    padding: .75em 1em;
+    background: #f8f8f8;
+    border-left: 4px solid #a0a0a0;
+    border-radius: 2px;
+}

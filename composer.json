@@ -1,0 +1,17 @@
+{
+    "name": "un-order/un-order",
+    "description": "WooCommerce plugin: Un Order — legal withdrawal (Dutch Civil Code Art. 230oa)",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "UnOrder\\": "includes/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

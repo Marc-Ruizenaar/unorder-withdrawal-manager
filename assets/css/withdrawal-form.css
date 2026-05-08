@@ -1,0 +1,209 @@
+/**
+ * Withdrawal form (My Account /withdrawal/).
+ *
+ * @package UnOrder
+ */
+.un-order-withdrawal {
+	max-width: 48rem;
+}
+
+.un-order-withdrawal__heading,
+.un-order-withdrawal__subheading {
+	margin-top: 0;
+}
+
+.un-order-withdrawal__summary-table {
+	margin-bottom: 1.5rem;
+}
+
+.un-order-withdrawal__th-product,
+.un-order-withdrawal__td-product {
+	text-align: left;
+}
+
+.un-order-withdrawal__th-qty,
+.un-order-withdrawal__th-total,
+.un-order-withdrawal__td-qty,
+.un-order-withdrawal__td-total {
+	text-align: end;
+	white-space: nowrap;
+}
+
+.un-order-withdrawal__row-meta td {
+	font-weight: 600;
+}
+
+.un-order-withdrawal__items-fieldset {
+	border: 0;
+	margin: 0 0 1.5rem;
+	padding: 0;
+}
+
+.un-order-withdrawal__legend {
+	float: left;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	padding: 0;
+	width: 100%;
+}
+
+.un-order-withdrawal__item-list {
+	clear: both;
+	list-style: none;
+	margin: 0.75em 0 0;
+	padding: 0;
+}
+
+.un-order-withdrawal__item {
+	border-bottom: 1px solid #eee;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.5rem;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0;
+	padding: 0.85em 0;
+}
+
+.un-order-withdrawal__item:last-child {
+	border-bottom: 0;
+}
+
+.un-order-withdrawal__item-main {
+	flex: 1 1 10rem;
+	min-width: 8rem;
+}
+
+.un-order-withdrawal__item-text {
+	font-weight: 500;
+}
+
+.un-order-withdrawal__item-ordered {
+	color: #666;
+	font-size: 0.95em;
+	margin: 0.25em 0 0;
+}
+
+.un-order-withdrawal__item-qty-wrap {
+	flex: 0 0 9rem;
+	max-width: 100%;
+}
+
+.un-order-withdrawal__item-qty-label {
+	display: block;
+	font-size: 0.9em;
+	margin-bottom: 0.25em;
+}
+
+.un-order-withdrawal__item-qty {
+	max-width: 100%;
+	width: 6.5rem;
+}
+
+.un-order-withdrawal__help {
+	color: #666;
+	margin: 0.5em 0 0;
+}
+
+.un-order-withdrawal__field-reason .input-text,
+.un-order-withdrawal__reason {
+	width: 100%;
+}
+
+.un-order-withdrawal__error-inline {
+	color: #b32d2e;
+	margin: 0.75em 0;
+}
+
+.un-order-withdrawal__error-inline:empty,
+.un-order-withdrawal__error-inline[hidden] {
+	display: none;
+}
+
+.un-order-withdrawal__error-inline:not( [hidden] ) {
+	display: block;
+}
+
+.un-order-withdrawal__actions {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: flex-end;
+	margin: 1.5rem 0 0;
+}
+
+.un-order-withdrawal__actions--final {
+	margin-top: 1.75rem;
+}
+
+.un-order-withdrawal__actions--final .un-order-withdrawal__btn-final {
+	font-size: 1.05em;
+	font-weight: 600;
+}
+
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-continue,
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-final {
+	background-color: #000;
+	border: 0px;
+	box-sizing: border-box;
+	color: #fff;
+	display: inline-block;
+	min-height: 2.75rem;
+	padding: 0.5em 1.35em;
+}
+
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-continue:hover,
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-continue:focus-visible,
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-final:hover,
+#un-order-withdrawal-form button.button.un-order-withdrawal__btn-final:focus-visible {
+	background-color: #1a1a1a;
+	border-color: #1a1a1a;
+	color: #fff;
+}
+
+@media ( max-width: 30rem ) {
+
+	.un-order-withdrawal__actions {
+		justify-content: stretch;
+	}
+
+	#un-order-withdrawal-form .un-order-withdrawal__btn-continue,
+	#un-order-withdrawal-form .un-order-withdrawal__btn-final {
+		text-align: center;
+		width: 100%;
+	}
+}
+
+.un-order-withdrawal__back-wrap {
+	margin: 0 0 0.5rem;
+}
+
+.un-order-withdrawal__go-back {
+	text-decoration: underline;
+}
+
+.un-order-withdrawal__go-back:hover,
+.un-order-withdrawal__go-back:focus {
+	text-decoration: none;
+}
+
+.un-order-withdrawal__confirm-box {
+	background: #f7f7f7;
+	border: 1px solid #e5e5e5;
+	border-radius: 2px;
+	padding: 1rem 1.25rem;
+}
+
+.un-order-withdrawal__confirm-list {
+	margin: 0.25em 0 1em 1.25em;
+}
+
+.un-order-withdrawal__confirm-reason {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.un-order-withdrawal--error .woocommerce-notices-wrapper {
+	margin-bottom: 1.5em;
+}
