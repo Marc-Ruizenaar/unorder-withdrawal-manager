@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:       Un Order
- * Plugin URI:        https://github.com/your-org/un-order
- * Description:       EU-compliant order withdrawal for WooCommerce (Dutch Civil Code Article 230oa). Use Un Order Pro for guest lookup, custom withdrawal periods, and licensing.
+ * Plugin Name:       UnOrder Withdrawal Manager
+ * Plugin URI:        https://github.com/Marc-Ruizenaar/unorder-withdrawal-manager
+ * Description:       EU-compliant order withdrawal for WooCommerce (Dutch Civil Code Article 230oa).
  * Version:           0.1.0
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * WC requires at least: 8.0
  * WC tested up to:  9.0
- * Author:            Un Order
+ * Author:            Marc Ruizenaar
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       un-order
