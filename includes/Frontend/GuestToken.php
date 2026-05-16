@@ -4,7 +4,7 @@
  *
  * Security contract (from core rules):
  *   - 64-char hex string from bin2hex( random_bytes(32) ).
- *   - Stored as `_un_order_guest_token` on the WooCommerce order (HPOS-compatible).
+ *   - Stored as `_unordw_guest_token` on the WooCommerce order (HPOS-compatible).
  *   - Single-use: consumed (meta deleted) after a successful form submission.
  *   - No fixed TTL — valid as long as the withdrawal right is open; the endpoint
  *     already enforces the period via order status and business rules.
@@ -26,7 +26,7 @@ final class GuestToken {
 	/**
 	 * Order meta key used to persist the active token.
 	 */
-	private const META_KEY = '_un_order_guest_token';
+	private const META_KEY = '_unordw_guest_token';
 
 	/**
 	 * Return the existing valid token for $order_id, or generate and persist a new one.

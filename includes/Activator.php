@@ -25,6 +25,6 @@ final class Activator {
 		Schema::create_tables();
 		update_option( Schema::OPTION_DB_VERSION, Schema::DB_VERSION );
 		// Re-register the My Account `withdrawal` endpoint rewrite rules.
-		add_option( 'un_order_needs_flush_rewrite', '1', '', false );
+		add_option( 'unordw_needs_flush_rewrite', '1', '', false );
 	}
 }

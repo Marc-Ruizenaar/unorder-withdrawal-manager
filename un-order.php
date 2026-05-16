@@ -23,18 +23,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'UN_ORDER_VERSION', '0.1.0' );
-define( 'UN_ORDER_PLUGIN_FILE', __FILE__ );
-define( 'UN_ORDER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'UN_ORDER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'UN_ORDER_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define( 'UNORDW_VERSION', '0.1.0' );
+define( 'UNORDW_PLUGIN_FILE', __FILE__ );
+define( 'UNORDW_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'UNORDW_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'UNORDW_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-$un_order_composer = UN_ORDER_PLUGIN_DIR . 'vendor/autoload.php';
-if ( is_readable( $un_order_composer ) ) {
-	require $un_order_composer;
+$unordw_composer = UNORDW_PLUGIN_DIR . 'vendor/autoload.php';
+if ( is_readable( $unordw_composer ) ) {
+	require $unordw_composer;
 } else {
-	require_once UN_ORDER_PLUGIN_DIR . 'includes/Autoloader.php';
-	UnOrder\Autoloader::register( UN_ORDER_PLUGIN_DIR . 'includes' );
+	require_once UNORDW_PLUGIN_DIR . 'includes/Autoloader.php';
+	UnOrder\Autoloader::register( UNORDW_PLUGIN_DIR . 'includes' );
 }
 
 /**
@@ -44,11 +44,11 @@ if ( is_readable( $un_order_composer ) ) {
  *
  * @return void
  */
-function un_order_bootstrap(): void {
+function unordw_bootstrap(): void {
 	$plugin = new UnOrder\Plugin();
 	$plugin->init();
 }
 
-add_action( 'plugins_loaded', 'un_order_bootstrap', 25 );
+add_action( 'plugins_loaded', 'unordw_bootstrap', 25 );
 
-register_activation_hook( UN_ORDER_PLUGIN_FILE, array( UnOrder\Activator::class, 'activate' ) );
+register_activation_hook( UNORDW_PLUGIN_FILE, array( UnOrder\Activator::class, 'activate' ) );

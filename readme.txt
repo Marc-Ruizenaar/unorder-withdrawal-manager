@@ -1,5 +1,5 @@
 === Un Order ===
-Contributors: unorder
+Contributors: marcruizenaar
 Tags: woocommerce, withdrawal, eu, compliance, orders
 Requires at least: 6.4
 Tested up to: 6.9

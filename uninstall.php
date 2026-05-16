@@ -17,7 +17,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  */
 global $wpdb;
 
-$un_order_table_name = $wpdb->prefix . 'un_order_requests';
+$unordw_table_name = $wpdb->prefix . 'unordw_requests';
 // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange -- Uninstall only: drop this plugin's table; caching does not apply.
-$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', $un_order_table_name ) );
-delete_option( 'un_order_db_version' );
+$wpdb->query( $wpdb->prepare( 'DROP TABLE IF EXISTS %i', $unordw_table_name ) );
+delete_option( 'unordw_db_version' );

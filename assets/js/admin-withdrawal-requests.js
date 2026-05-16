@@ -10,9 +10,9 @@
 		var $single = $( '#un-order-reject-single' );
 		var $bulk = $( '#un-order-reject-bulk' );
 		var $requestId = $( '#un-order-reject-request-id' );
-		var $singleReason = $( '#un_order_reject_reason' );
-		var $bulkText = $( '#un_order_bulk_reject_textarea' );
-		var $bulkReasonHidden = $( '#un_order_bulk_reject_reason' );
+		var $singleReason = $( '#unordw_reject_reason' );
+		var $bulkText = $( '#unordw_bulk_reject_textarea' );
+		var $bulkReasonHidden = $( '#unordw_bulk_reject_reason' );
 
 		function openDialog( isBulk ) {
 			$dialog.prop( 'hidden', false );
@@ -96,7 +96,7 @@
 			e.preventDefault();
 			e.stopPropagation();
 			var id = parseInt( $( this ).attr( 'data-reason-id' ) || '0', 10 );
-			var map = window.unOrderWithdrawalReasons || {};
+			var map = window.unordwWithdrawalReasons || {};
 			var text = map[ id ];
 			if ( typeof text === 'undefined' ) {
 				text = map[ String( id ) ];
@@ -137,7 +137,7 @@
 			if ( act !== 'reject' ) {
 				return;
 			}
-			var $boxes = $form.find( 'input[name="un_order_withdrawal_requests[]"]:checked' );
+			var $boxes = $form.find( 'input[name="unordw_withdrawal_requests[]"]:checked' );
 			if ( ! $boxes.length ) {
 				return;
 			}

@@ -42,10 +42,10 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p><strong><?php esc_html_e( 'Items you are withdrawing', 'un-order' ); ?></strong></p>
 <ul>
-	<?php foreach ( $withdrawal_lines as $un_order_line_row ) : ?>
+	<?php foreach ( $withdrawal_lines as $unordw_line_row ) : ?>
 		<li>
 			<?php
-			echo esc_html( $un_order_line_row['title'] . ' &times; ' . $un_order_line_row['quantity'] );
+			echo esc_html( $unordw_line_row['title'] . ' &times; ' . $unordw_line_row['quantity'] );
 			?>
 		</li>
 	<?php endforeach; ?>

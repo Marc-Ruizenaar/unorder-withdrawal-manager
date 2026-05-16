@@ -1,5 +1,5 @@
 /**
- * Withdrawal: per-line quantity → review → submit via admin-ajax (eu_withdrawal_submit).
+ * Withdrawal: per-line quantity → review → submit via admin-ajax (unordw_withdrawal_submit).
  */
 (function () {
 	'use strict';
@@ -19,9 +19,9 @@
 	const submitError = document.getElementById( 'un-order-submit-error' );
 	const listEl = document.getElementById( 'un-order-confirm-list' );
 	const reasonOut = document.getElementById( 'un-order-confirm-reason' );
-	const reasonIn = document.getElementById( 'un_order_withdrawal_reason' );
-	const l10n = window.unOrderWithdrawal || {
-		ajaxAction: 'eu_withdrawal_submit',
+	const reasonIn = document.getElementById( 'unordw_withdrawal_reason' );
+	const l10n = window.unordwWithdrawal || {
+		ajaxAction: 'unordw_withdrawal_submit',
 		ajaxUrl: '/wp-admin/admin-ajax.php',
 		nonce: '',
 		selectItemError: '',

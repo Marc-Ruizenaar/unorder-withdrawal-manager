@@ -39,7 +39,7 @@ final class WithdrawalReceivedEmail extends WC_Email {
 	 * Constructor: id, templates, and trigger.
 	 */
 	public function __construct() {
-		$this->id             = 'eu_withdrawal_received';
+		$this->id             = 'unordw_withdrawal_received';
 		$this->customer_email = true;
 		$this->title          = __( 'Withdrawal request received', 'un-order' );
 		$this->description    = __( 'Sent to the customer when they submit a withdrawal request for an order.', 'un-order' );
@@ -52,9 +52,9 @@ final class WithdrawalReceivedEmail extends WC_Email {
 
 		$this->template_html  = 'emails/eu-withdrawal-received.php';
 		$this->template_plain = 'emails/plain/eu-withdrawal-received.php';
-		$this->template_base  = UN_ORDER_PLUGIN_DIR . 'templates/';
+		$this->template_base  = UNORDW_PLUGIN_DIR . 'templates/';
 
-		add_action( 'un_order_withdrawal_submitted', array( $this, 'trigger' ), 10, 3 );
+		add_action( 'unordw_withdrawal_submitted', array( $this, 'trigger' ), 10, 3 );
 
 		parent::__construct();
 

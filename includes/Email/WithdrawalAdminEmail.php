@@ -37,7 +37,7 @@ final class WithdrawalAdminEmail extends WC_Email {
 	 * Constructor: id, templates, and trigger.
 	 */
 	public function __construct() {
-		$this->id             = 'eu_withdrawal_admin';
+		$this->id             = 'unordw_withdrawal_admin';
 		$this->title          = __( 'Withdrawal request (admin)', 'un-order' );
 		$this->description    = __( 'Receive a plain-text notification when a customer submits a withdrawal request.', 'un-order' );
 		$this->email_group    = 'orders';
@@ -49,14 +49,14 @@ final class WithdrawalAdminEmail extends WC_Email {
 
 		$this->template_html  = 'emails/eu-withdrawal-admin.php';
 		$this->template_plain = 'emails/plain/eu-withdrawal-admin.php';
-		$this->template_base  = UN_ORDER_PLUGIN_DIR . 'templates/';
+		$this->template_base  = UNORDW_PLUGIN_DIR . 'templates/';
 
-		add_action( 'un_order_withdrawal_submitted', array( $this, 'trigger' ), 10, 3 );
+		add_action( 'unordw_withdrawal_submitted', array( $this, 'trigger' ), 10, 3 );
 
 		parent::__construct();
 
 		// Prefer the plugin-level admin email setting over the global admin_email.
-		$plugin_email        = (string) get_option( 'un_order_admin_email', '' );
+		$plugin_email        = (string) get_option( 'unordw_admin_email', '' );
 		$default_recipient   = '' !== $plugin_email ? $plugin_email : (string) get_option( 'admin_email', '' );
 		$this->recipient     = $this->get_option( 'recipient', $default_recipient );
 
@@ -219,7 +219,7 @@ final class WithdrawalAdminEmail extends WC_Email {
 					esc_html( (string) get_option( 'admin_email', '' ) )
 				),
 				'placeholder' => '',
-				'default'     => (string) get_option( 'un_order_admin_email', get_option( 'admin_email', '' ) ),
+				'default'     => (string) get_option( 'unordw_admin_email', get_option( 'admin_email', '' ) ),
 				'desc_tip'    => true,
 			),
 			'subject'            => array(

@@ -31,14 +31,14 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 </p>
 <p><?php esc_html_e( 'Your withdrawal request for the following items has been approved:', 'un-order' ); ?></p>
 <ul>
-	<?php foreach ( $withdrawal_lines as $un_order_line_row ) : ?>
-		<li><?php echo esc_html( $un_order_line_row['title'] . ' &times; ' . $un_order_line_row['quantity'] ); ?></li>
+	<?php foreach ( $withdrawal_lines as $unordw_line_row ) : ?>
+		<li><?php echo esc_html( $unordw_line_row['title'] . ' &times; ' . $unordw_line_row['quantity'] ); ?></li>
 	<?php endforeach; ?>
 </ul>
 
 <p><strong><?php esc_html_e( 'How to return your items', 'un-order' ); ?></strong></p>
 <?php
-$un_order_store_mail = sanitize_email( (string) get_option( 'woocommerce_email_from_address' ) );
+$unordw_store_mail = sanitize_email( (string) get_option( 'woocommerce_email_from_address' ) );
 ?>
 <p>
 	<?php
@@ -51,7 +51,7 @@ $un_order_store_mail = sanitize_email( (string) get_option( 'woocommerce_email_f
 </p>
 <p>
 	<?php esc_html_e( 'Please pack the items securely and return them to us. Use the original packaging where possible.', 'un-order' ); ?>
-	<?php if ( $un_order_store_mail ) : ?>
+	<?php if ( $unordw_store_mail ) : ?>
 		<?php
 		echo ' ';
 		printf(
@@ -60,7 +60,7 @@ $un_order_store_mail = sanitize_email( (string) get_option( 'woocommerce_email_f
 				__( 'Contact us if you need a return label or the return address: %s', 'un-order' ),
 				array( 'a' => array( 'href' => true ) )
 			),
-			'<a href="mailto:' . esc_attr( $un_order_store_mail ) . '">' . esc_html( $un_order_store_mail ) . '</a>'
+			'<a href="mailto:' . esc_attr( $unordw_store_mail ) . '">' . esc_html( $unordw_store_mail ) . '</a>'
 		);
 		?>
 	<?php endif; ?>

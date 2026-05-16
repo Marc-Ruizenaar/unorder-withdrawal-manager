@@ -41,7 +41,7 @@ final class OrderWithdrawalAccess {
 		}
 
 		if ( Capabilities::category_exclusions_supported() ) {
-			$excluded = array_filter( array_map( 'absint', (array) get_option( 'un_order_excluded_categories', array() ) ) );
+			$excluded = array_filter( array_map( 'absint', (array) get_option( 'unordw_excluded_categories', array() ) ) );
 			if ( ! empty( $excluded ) && self::all_items_in_excluded_categories( $order, $excluded ) ) {
 				return false;
 			}

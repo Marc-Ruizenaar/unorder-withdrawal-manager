@@ -31,8 +31,8 @@ printf(
 );
 
 echo esc_html__( 'Items you are withdrawing', 'un-order' ) . "\n";
-foreach ( $withdrawal_lines as $un_order_line_row ) {
-	echo '- ' . esc_html( $un_order_line_row['title'] . ' x ' . $un_order_line_row['quantity'] ) . "\n";
+foreach ( $withdrawal_lines as $unordw_line_row ) {
+	echo '- ' . esc_html( $unordw_line_row['title'] . ' x ' . $unordw_line_row['quantity'] ) . "\n";
 }
 echo "\n";
 

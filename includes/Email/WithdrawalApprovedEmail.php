@@ -39,7 +39,7 @@ final class WithdrawalApprovedEmail extends WC_Email {
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->id             = 'eu_withdrawal_approved';
+		$this->id             = 'unordw_withdrawal_approved';
 		$this->customer_email = true;
 		$this->title          = __( 'Withdrawal approved', 'un-order' );
 		$this->description    = __( 'Sent to the customer when a withdrawal request is approved.', 'un-order' );
@@ -51,9 +51,9 @@ final class WithdrawalApprovedEmail extends WC_Email {
 
 		$this->template_html  = 'emails/eu-withdrawal-approved.php';
 		$this->template_plain = 'emails/plain/eu-withdrawal-approved.php';
-		$this->template_base  = UN_ORDER_PLUGIN_DIR . 'templates/';
+		$this->template_base  = UNORDW_PLUGIN_DIR . 'templates/';
 
-		add_action( 'un_order_withdrawal_approved', array( $this, 'trigger' ), 10, 1 );
+		add_action( 'unordw_withdrawal_approved', array( $this, 'trigger' ), 10, 1 );
 
 		parent::__construct();
 	}

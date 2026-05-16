@@ -48,8 +48,8 @@ final class WithdrawalRequestsListTable extends WP_List_Table {
 	public function __construct() {
 		parent::__construct(
 			array(
-				'singular' => 'un_order_withdrawal_request',
-				'plural'   => 'un_order_withdrawal_requests',
+				'singular' => 'unordw_withdrawal_request',
+				'plural'   => 'unordw_withdrawal_requests',
 				'ajax'     => false,
 				'screen'   => 'woocommerce_page_un-order-withdrawals',
 			)
@@ -346,12 +346,12 @@ final class WithdrawalRequestsListTable extends WP_List_Table {
 		$base = add_query_arg(
 			array(
 				'page'            => WithdrawalRequestsPage::SLUG,
-				'un_order_action' => 'approve',
+				'unordw_action' => 'approve',
 				'request_id'      => $request_id,
 			),
 			admin_url( 'admin.php' )
 		);
-		return wp_nonce_url( $base, 'un_order_withdrawal_approve_' . $request_id );
+		return wp_nonce_url( $base, 'unordw_withdrawal_approve_' . $request_id );
 	}
 
 	/**

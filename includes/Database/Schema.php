@@ -19,14 +19,14 @@ final class Schema {
 	 *
 	 * @var string
 	 */
-	public const OPTION_DB_VERSION = 'un_order_db_version';
+	public const OPTION_DB_VERSION = 'unordw_db_version';
 
 	/**
 	 * Suffix of the requests table (after $wpdb->prefix).
 	 *
 	 * @var string
 	 */
-	public const TABLE_REQUESTS = 'un_order_requests';
+	public const TABLE_REQUESTS = 'unordw_requests';
 
 	/**
 	 * Current schema version written on install/activate and used by future migrations.

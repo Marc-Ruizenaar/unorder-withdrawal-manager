@@ -39,7 +39,7 @@ final class WithdrawalRejectedEmail extends WC_Email {
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->id             = 'eu_withdrawal_rejected';
+		$this->id             = 'unordw_withdrawal_rejected';
 		$this->customer_email = true;
 		$this->title          = __( 'Withdrawal not approved', 'un-order' );
 		$this->description    = __( 'Sent to the customer when a withdrawal request is rejected.', 'un-order' );
@@ -51,9 +51,9 @@ final class WithdrawalRejectedEmail extends WC_Email {
 
 		$this->template_html  = 'emails/eu-withdrawal-rejected.php';
 		$this->template_plain = 'emails/plain/eu-withdrawal-rejected.php';
-		$this->template_base  = UN_ORDER_PLUGIN_DIR . 'templates/';
+		$this->template_base  = UNORDW_PLUGIN_DIR . 'templates/';
 
-		add_action( 'un_order_withdrawal_rejected', array( $this, 'trigger' ), 10, 1 );
+		add_action( 'unordw_withdrawal_rejected', array( $this, 'trigger' ), 10, 1 );
 
 		parent::__construct();
 	}

@@ -83,9 +83,9 @@ final class AccountWithdrawalEndpoint {
 			if ( is_string( $order ) ) {
 				wc_get_template(
 					'myaccount/withdrawal-error.php',
-					array( 'un_order_message' => $order ),
+					array( 'unordw_message' => $order ),
 					'',
-					UN_ORDER_PLUGIN_DIR . 'templates/'
+					UNORDW_PLUGIN_DIR . 'templates/'
 				);
 				return;
 			}
@@ -94,7 +94,7 @@ final class AccountWithdrawalEndpoint {
 				'myaccount/withdrawal-success.php',
 				array( 'order' => $order ),
 				'',
-				UN_ORDER_PLUGIN_DIR . 'templates/'
+				UNORDW_PLUGIN_DIR . 'templates/'
 			);
 			return;
 		}
@@ -103,9 +103,9 @@ final class AccountWithdrawalEndpoint {
 		if ( is_string( $order ) ) {
 			wc_get_template(
 				'myaccount/withdrawal-error.php',
-				array( 'un_order_message' => $order ),
+				array( 'unordw_message' => $order ),
 				'',
-				UN_ORDER_PLUGIN_DIR . 'templates/'
+				UNORDW_PLUGIN_DIR . 'templates/'
 			);
 			return;
 		}
@@ -117,19 +117,19 @@ final class AccountWithdrawalEndpoint {
 				'order'              => $order,
 				'line_remaining'     => RequestRepository::get_remaining_quantities( $order ),
 				'form_select_title'  => (string) get_option(
-					'un_order_form_select_title',
+					'unordw_form_select_title',
 					__( 'Select quantities to withdraw', 'un-order' )
 				),
 				'form_intro'         => wp_kses_post(
 					(string) get_option(
-						'un_order_form_intro',
+						'unordw_form_intro',
 						__( 'For each product, choose how many units to withdraw. The maximum is what you still have available after any earlier pending or approved withdrawal for this order. A rejected request does not use up your available quantity. Use 0 if you are not withdrawing a line in this request.', 'un-order' )
 					)
 				),
 				'guest_token'        => $this->get_guest_token_from_request(),
 			),
 			'',
-			UN_ORDER_PLUGIN_DIR . 'templates/'
+			UNORDW_PLUGIN_DIR . 'templates/'
 		);
 	}
 
@@ -152,10 +152,10 @@ final class AccountWithdrawalEndpoint {
 	 * One-time flush after activation when the new endpoint is registered.
 	 */
 	public function maybe_flush_rewrite_rules(): void {
-		$v = get_option( 'un_order_needs_flush_rewrite' );
+		$v = get_option( 'unordw_needs_flush_rewrite' );
 		if ( '1' === (string) $v || 1 === $v || true === $v ) {
 			flush_rewrite_rules( false );
-			delete_option( 'un_order_needs_flush_rewrite' );
+			delete_option( 'unordw_needs_flush_rewrite' );
 		}
 	}
 
@@ -292,11 +292,11 @@ final class AccountWithdrawalEndpoint {
 			return;
 		}
 
-		$ver = ( defined( 'UN_ORDER_VERSION' ) && is_string( UN_ORDER_VERSION ) ) ? UN_ORDER_VERSION : '0';
+		$ver = ( defined( 'UNORDW_VERSION' ) && is_string( UNORDW_VERSION ) ) ? UNORDW_VERSION : '0';
 
 		wp_enqueue_style(
 			'un-order-withdrawal-form',
-			UN_ORDER_PLUGIN_URL . 'assets/css/withdrawal-form.css',
+			UNORDW_PLUGIN_URL . 'assets/css/withdrawal-form.css',
 			array(),
 			$ver
 		);
@@ -307,14 +307,14 @@ final class AccountWithdrawalEndpoint {
 
 		wp_register_script(
 			'un-order-withdrawal-form',
-			UN_ORDER_PLUGIN_URL . 'assets/js/withdrawal-form.js',
+			UNORDW_PLUGIN_URL . 'assets/js/withdrawal-form.js',
 			array(),
 			$ver,
 			true
 		);
 		wp_localize_script(
 			'un-order-withdrawal-form',
-			'unOrderWithdrawal',
+			'unordwWithdrawal',
 			array(
 				'ajaxUrl'         => admin_url( 'admin-ajax.php' ),
 				'ajaxAction'      => WithdrawalSubmit::ACTION,

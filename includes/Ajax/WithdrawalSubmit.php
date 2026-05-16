@@ -2,7 +2,7 @@
 /**
  * AJAX: customer confirms and submits a withdrawal request (Article 230oa).
  *
- * Physical table: wp_{prefix}un_order_requests (same data the spec sometimes labels eu_withdrawal_requests).
+ * Physical table: wp_{prefix}unordw_requests (same data the spec sometimes labels unordw_withdrawal_requests).
  *
  * @package UnOrder
  */
@@ -21,21 +21,22 @@ use WC_Order;
 use WP_Error;
 
 /**
- * Handles `wp_ajax_eu_withdrawal_submit` (authenticated) and
- * `wp_ajax_nopriv_eu_withdrawal_submit` (guest via single-use token).
+ * Handles `wp_ajax_unordw_withdrawal_submit` (authenticated) and
+ * `wp_ajax_nopriv_unordw_withdrawal_submit` (guest via single-use token).
  */
 final class WithdrawalSubmit {
 
 	/**
 	 * WordPress nonce action and AJAX `action` parameter value.
 	 */
-	public const ACTION = 'eu_withdrawal_submit';
+	public const ACTION = 'unordw_withdrawal_submit';
 
 	/**
 	 * @return void
 	 */
 	public function register(): void {
 		add_action( 'wp_ajax_' . self::ACTION, array( $this, 'handle' ) );
+		add_action( 'wp_ajax_nopriv_' . self::ACTION, array( $this, 'handle' ) );
 	}
 
 	/**
@@ -110,8 +111,8 @@ final class WithdrawalSubmit {
 
 		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified via check_ajax_referer earlier.
 		// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Qty keys/values sanitized in the foreach below (absint, sanitize_text_field).
-		$posted_qty = isset( $_POST['un_order_item_qty'] ) && is_array( $_POST['un_order_item_qty'] )
-			? wp_unslash( $_POST['un_order_item_qty'] )
+		$posted_qty = isset( $_POST['unordw_item_qty'] ) && is_array( $_POST['unordw_item_qty'] )
+			? wp_unslash( $_POST['unordw_item_qty'] )
 			: array();
 		// phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
@@ -129,8 +130,8 @@ final class WithdrawalSubmit {
 		}
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
-		$reason = isset( $_POST['un_order_withdrawal_reason'] )
-			? sanitize_textarea_field( wp_unslash( (string) $_POST['un_order_withdrawal_reason'] ) )
+		$reason = isset( $_POST['unordw_withdrawal_reason'] )
+			? sanitize_textarea_field( wp_unslash( (string) $_POST['unordw_withdrawal_reason'] ) )
 			: '';
 
 		$normalized = $this->normalize_item_quantities( $order, $raw_qty, RequestRepository::get_committed_quantities_by_line( $order_id ) );
@@ -164,7 +165,7 @@ final class WithdrawalSubmit {
 			'shutdown',
 			static function () use ( $notify_order_id, $notify_items, $notify_reason ): void {
 				// Fires when the withdrawal is saved. Args: order_id, line_id => quantity, reason.
-				do_action( 'un_order_withdrawal_submitted', $notify_order_id, $notify_items, $notify_reason );
+				do_action( 'unordw_withdrawal_submitted', $notify_order_id, $notify_items, $notify_reason );
 			},
 			5
 		);
@@ -197,7 +198,7 @@ final class WithdrawalSubmit {
 
 			$item = $order->get_item( $item_id );
 			if ( ! $item || ! ( $item instanceof \WC_Order_Item_Product ) ) {
-				return new WP_Error( 'un_order_bad_item', __( 'One of the selected products is not part of this order.', 'un-order' ) );
+				return new WP_Error( 'unordw_bad_item', __( 'One of the selected products is not part of this order.', 'un-order' ) );
 			}
 
 			$line_max = (float) $item->get_quantity();
@@ -228,7 +229,7 @@ final class WithdrawalSubmit {
 			}
 			if ( $want - $max > 0.0001 ) {
 				return new WP_Error(
-					'un_order_qty',
+					'unordw_qty',
 					__( 'You cannot withdraw more than the remaining quantity for each line (your order line minus quantities already in a pending or approved withdrawal).', 'un-order' )
 				);
 			}

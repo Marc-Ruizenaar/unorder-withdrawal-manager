@@ -1,5 +1,5 @@
 /**
- * [eu_withdrawal_button] shortcode: order-lookup form handler.
+ * [unordw_withdrawal_lookup] shortcode: order-lookup form handler.
  *
  * Submits order number + billing email via AJAX, shows the matched order on success,
  * then the customer continues to the withdrawal endpoint.
@@ -166,10 +166,10 @@
 		clearError();
 
 		const numberInput = /** @type {HTMLInputElement|null} */ (
-			form.querySelector( '[name="un_order_lookup_order_number"]' )
+			form.querySelector( '[name="unordw_lookup_order_number"]' )
 		);
 		const emailInput = /** @type {HTMLInputElement|null} */ (
-			form.querySelector( '[name="un_order_lookup_email"]' )
+			form.querySelector( '[name="unordw_lookup_email"]' )
 		);
 
 		const orderNumber = numberInput ? numberInput.value.trim() : '';

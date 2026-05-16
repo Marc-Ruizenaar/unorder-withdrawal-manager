@@ -29,17 +29,17 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 <p><?php esc_html_e( 'We have reviewed your withdrawal request, and we are not able to approve it for the following reason:', 'un-order' ); ?></p>
 <blockquote>
 	<?php
-	$un_order_rejection_body = '' !== trim( $rejection_message )
+	$unordw_rejection_body = '' !== trim( $rejection_message )
 		? $rejection_message
 		: __( 'This withdrawal request does not meet the conditions for approval. If you believe this is a mistake, please contact us.', 'un-order' );
-	echo wp_kses_post( wpautop( wptexturize( $un_order_rejection_body ) ) );
+	echo wp_kses_post( wpautop( wptexturize( $unordw_rejection_body ) ) );
 	?>
 </blockquote>
 
 <p><?php esc_html_e( 'The request applied to these items:', 'un-order' ); ?></p>
 <ul>
-	<?php foreach ( $withdrawal_lines as $un_order_line_row ) : ?>
-		<li><?php echo esc_html( $un_order_line_row['title'] . ' &times; ' . $un_order_line_row['quantity'] ); ?></li>
+	<?php foreach ( $withdrawal_lines as $unordw_line_row ) : ?>
+		<li><?php echo esc_html( $unordw_line_row['title'] . ' &times; ' . $unordw_line_row['quantity'] ); ?></li>
 	<?php endforeach; ?>
 </ul>
 <?php

@@ -40,7 +40,7 @@ final class AccountOrdersWithdrawal {
 			return $actions;
 		}
 
-		$actions['un_order_withdraw'] = array(
+		$actions['unordw_withdraw'] = array(
 			'url'        => $this->get_withdrawal_url( $order ),
 			'name'       => __( 'Withdraw order', 'un-order' ),
 			'aria-label' => sprintf(
@@ -65,9 +65,9 @@ final class AccountOrdersWithdrawal {
 
 		wp_enqueue_style(
 			'un-order-account-orders',
-			UN_ORDER_PLUGIN_URL . 'assets/css/account-orders.css',
+			UNORDW_PLUGIN_URL . 'assets/css/account-orders.css',
 			array(),
-			UN_ORDER_VERSION
+			UNORDW_VERSION
 		);
 	}
 

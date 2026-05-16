@@ -11,7 +11,7 @@ namespace UnOrder;
 
 defined( 'ABSPATH' ) || exit;
 
-use UnOrder\Admin\EuWithdrawalSettingsPage;
+use UnOrder\Admin\UnordwWithdrawalSettingsPage;
 use UnOrder\Admin\WithdrawalRequestsPage;
 use UnOrder\Ajax\WithdrawalSubmit;
 use UnOrder\Email\WithdrawalAdminEmail;
@@ -41,7 +41,7 @@ final class Plugin {
 	public function init(): void {
 		$this->woocommerce_active = class_exists( 'WooCommerce' );
 
-		add_filter( 'plugin_action_links_' . \UN_ORDER_PLUGIN_BASENAME, array( $this, 'add_plugin_action_links' ), 10, 2 );
+		add_filter( 'plugin_action_links_' . \UNORDW_PLUGIN_BASENAME, array( $this, 'add_plugin_action_links' ), 10, 2 );
 
 		// Register before WC early-return: admin-post.php uses has_action(); missing hook yields HTTP 400 and no approval.
 		$withdrawal_admin_list = new WithdrawalRequestsPage();
@@ -56,13 +56,13 @@ final class Plugin {
 		add_action( 'before_woocommerce_init', array( $this, 'declare_hpos_compatibility' ) );
 
 		add_filter(
-			'pre_update_option_un_order_excluded_categories',
+			'pre_update_option_unordw_excluded_categories',
 			array( $this, 'preserve_excluded_categories_when_locked' ),
 			10,
 			2
 		);
 
-		$withdraw_features = (bool) apply_filters( 'un_order_withdraw_features_enabled', true );
+		$withdraw_features = (bool) apply_filters( 'unordw_withdraw_features_enabled', true );
 
 		if ( ! $withdraw_features ) {
 			return;
@@ -94,7 +94,7 @@ final class Plugin {
 			return $links;
 		}
 
-		$url = \admin_url( 'admin.php?page=wc-settings&tab=un_order_eu_withdrawal' );
+		$url = \admin_url( 'admin.php?page=wc-settings&tab=unordw_withdrawal' );
 
 		array_unshift(
 			$links,
@@ -115,7 +115,7 @@ final class Plugin {
 	 * @return array<int, \WC_Settings_Page>
 	 */
 	public function register_woocommerce_settings_pages( array $pages ): array {
-		$pages[] = new EuWithdrawalSettingsPage();
+		$pages[] = new UnordwWithdrawalSettingsPage();
 		return $pages;
 	}
 
@@ -140,7 +140,7 @@ final class Plugin {
 		if ( ! class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
 			return;
 		}
-		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', UN_ORDER_PLUGIN_FILE, true );
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', UNORDW_PLUGIN_FILE, true );
 	}
 
 	/**

@@ -18,7 +18,7 @@ final class Capabilities {
 	 * Withdrawal window in days (free core: always 14 unless Pro filters).
 	 */
 	public static function withdrawal_period_days(): int {
-		$days = (int) apply_filters( 'un_order_withdrawal_period_days', 14 );
+		$days = (int) apply_filters( 'unordw_withdrawal_period_days', 14 );
 		return max( 1, $days < 1 ? 14 : $days );
 	}
 
@@ -26,13 +26,13 @@ final class Capabilities {
 	 * Guest / token flows (free core: off unless Pro enables).
 	 */
 	public static function guest_withdrawals_supported(): bool {
-		return (bool) apply_filters( 'un_order_guest_withdrawals_supported', false );
+		return (bool) apply_filters( 'unordw_guest_withdrawals_supported', false );
 	}
 
 	/**
 	 * Category-based withdrawal exclusions (free core: off unless Pro enables).
 	 */
 	public static function category_exclusions_supported(): bool {
-		return (bool) apply_filters( 'un_order_supports_category_exclusions', false );
+		return (bool) apply_filters( 'unordw_supports_category_exclusions', false );
 	}
 }

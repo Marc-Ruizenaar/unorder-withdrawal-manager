@@ -1,6 +1,6 @@
 <?php
 /**
- * Withdrawal lookup form rendered by the [eu_withdrawal_button] shortcode.
+ * Withdrawal lookup form rendered by the [unordw_withdrawal_lookup] shortcode.
  *
  * Customers enter their order number and billing email to find their order and
  * proceed to the standard withdrawal flow. Theme can override by copying this
@@ -25,14 +25,14 @@ defined( 'ABSPATH' ) || exit;
 		novalidate
 	>
 		<p class="form-row form-row-wide un-order-lookup__field">
-			<label for="un_order_lookup_order_number">
+			<label for="unordw_lookup_order_number">
 				<?php esc_html_e( 'Order number', 'un-order' ); ?>
 				<abbr class="required" title="<?php esc_attr_e( 'required', 'un-order' ); ?>">*</abbr>
 			</label>
 			<input
 				type="text"
-				name="un_order_lookup_order_number"
-				id="un_order_lookup_order_number"
+				name="unordw_lookup_order_number"
+				id="unordw_lookup_order_number"
 				class="input-text un-order-lookup__input"
 				autocomplete="off"
 				inputmode="numeric"
@@ -41,14 +41,14 @@ defined( 'ABSPATH' ) || exit;
 		</p>
 
 		<p class="form-row form-row-wide un-order-lookup__field">
-			<label for="un_order_lookup_email">
+			<label for="unordw_lookup_email">
 				<?php esc_html_e( 'Billing email address', 'un-order' ); ?>
 				<abbr class="required" title="<?php esc_attr_e( 'required', 'un-order' ); ?>">*</abbr>
 			</label>
 			<input
 				type="email"
-				name="un_order_lookup_email"
-				id="un_order_lookup_email"
+				name="unordw_lookup_email"
+				id="unordw_lookup_email"
 				class="input-text un-order-lookup__input"
 				autocomplete="email"
 				required

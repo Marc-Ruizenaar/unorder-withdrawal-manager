@@ -29,76 +29,76 @@ msgid "Un Order requires WooCommerce to be installed and active."
 msgstr ""
 
 # -----------------------------------------------------------------------
-# WooCommerce > Settings > Un Order (EuWithdrawalSettingsPage.php)
+# WooCommerce > Settings > Un Order (UnordwWithdrawalSettingsPage.php)
 # -----------------------------------------------------------------------
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Un Order"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Un Order settings"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Configure the right-of-withdrawal flow (Dutch Civil Code Art. 230oa / EU Directive)."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Withdrawal period (days)"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Days after purchase during which the customer may exercise the right of withdrawal. Statutory minimum is 14 days."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Disable withdrawal for categories"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Orders whose items all belong to the selected categories will not show the withdrawal button. Leave empty to allow withdrawal for all categories."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Quantity selection title"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Heading shown inside the withdrawal form above the product list (the fieldset legend)."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Select quantities to withdraw"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Withdrawal form help text"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Explanatory paragraph shown below the quantity selection title. Basic HTML is allowed. Leave blank to hide."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Admin notification email"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Override the recipient for withdrawal admin notifications. Leave blank to use the WooCommerce store email."
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 #. translators: %s: current admin email address
 msgid "Defaults to %s"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
 msgid "Allow guest withdrawals"
 msgstr ""
 
-#: includes/Admin/EuWithdrawalSettingsPage.php
-msgid "Allow customers without an account to use the <code>[eu_withdrawal_button]</code> shortcode to look up their order by number and email."
+#: includes/Admin/UnordwWithdrawalSettingsPage.php
+msgid "Allow customers without an account to use the <code>[unordw_withdrawal_lookup]</code> shortcode to look up their order by number and email."
 msgstr ""
 
 # -----------------------------------------------------------------------

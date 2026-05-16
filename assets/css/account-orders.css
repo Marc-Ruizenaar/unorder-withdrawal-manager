@@ -3,7 +3,7 @@
  *
  * @package UnOrder
  */
-.woocommerce-orders-table__cell-order-actions a.woocommerce-button.un_order_withdraw {
+.woocommerce-orders-table__cell-order-actions a.woocommerce-button.unordw_withdraw {
 	display: inline-block;
 	margin: 0.25em 0.25em 0 0;
 }

@@ -22,8 +22,8 @@ if ( $order->get_billing_first_name() ) {
 }
 
 echo esc_html__( 'Your withdrawal request for the following items has been approved:', 'un-order' ) . "\n";
-foreach ( $withdrawal_lines as $un_order_line_row ) {
-	echo '- ' . esc_html( $un_order_line_row['title'] . ' x ' . $un_order_line_row['quantity'] ) . "\n";
+foreach ( $withdrawal_lines as $unordw_line_row ) {
+	echo '- ' . esc_html( $unordw_line_row['title'] . ' x ' . $unordw_line_row['quantity'] ) . "\n";
 }
 echo "\n" . esc_html__( 'How to return your items', 'un-order' ) . "\n\n";
 echo esc_html__( 'Please pack the items securely and return them to us. Use the original packaging where possible. Contact us if you need a return label or the return address.', 'un-order' ) . "\n\n";

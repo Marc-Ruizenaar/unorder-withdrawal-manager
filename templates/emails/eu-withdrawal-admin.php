@@ -32,8 +32,8 @@ do_action( 'woocommerce_email_header', $email_heading, $email );
 </p>
 <p><strong><?php esc_html_e( 'Items and quantities', 'un-order' ); ?></strong></p>
 <ul>
-	<?php foreach ( $withdrawal_lines as $un_order_line_row ) : ?>
-		<li><?php echo esc_html( $un_order_line_row['title'] . ' &times; ' . $un_order_line_row['quantity'] ); ?></li>
+	<?php foreach ( $withdrawal_lines as $unordw_line_row ) : ?>
+		<li><?php echo esc_html( $unordw_line_row['title'] . ' &times; ' . $unordw_line_row['quantity'] ); ?></li>
 	<?php endforeach; ?>
 </ul>
 <?php if ( '' !== $withdrawal_reason ) : ?>

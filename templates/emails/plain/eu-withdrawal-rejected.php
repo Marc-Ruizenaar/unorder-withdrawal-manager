@@ -23,13 +23,13 @@ if ( $order->get_billing_first_name() ) {
 }
 
 echo esc_html__( 'We have reviewed your withdrawal request, and we are not able to approve it for the following reason:', 'un-order' ) . "\n\n";
-$un_order_rejection_body = '' !== trim( $rejection_message )
+$unordw_rejection_body = '' !== trim( $rejection_message )
 	? $rejection_message
 	: __( 'This withdrawal request does not meet the conditions for approval. If you believe this is a mistake, please contact us.', 'un-order' );
-echo esc_html( $un_order_rejection_body ) . "\n\n";
+echo esc_html( $unordw_rejection_body ) . "\n\n";
 echo esc_html__( 'The request applied to these items:', 'un-order' ) . "\n";
-foreach ( $withdrawal_lines as $un_order_line_row ) {
-	echo '- ' . esc_html( $un_order_line_row['title'] . ' x ' . $un_order_line_row['quantity'] ) . "\n";
+foreach ( $withdrawal_lines as $unordw_line_row ) {
+	echo '- ' . esc_html( $unordw_line_row['title'] . ' x ' . $unordw_line_row['quantity'] ) . "\n";
 }
 
 if ( $additional_content ) {
